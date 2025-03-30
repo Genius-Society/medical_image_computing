@@ -1,5 +1,6 @@
 test/*
 logs/*
-__pycache__/*
+*__pycache__*
 model/*
 rename.sh
+test.*
