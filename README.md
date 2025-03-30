@@ -1,10 +1,26 @@
-# HEp2 Classification by AlexNet
+# Chapter III - Classifying Cell Images Using Deep Learning Models
 [![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/hep2/LICENSE)
 [![hf](https://img.shields.io/badge/huggingface-HEp2-ffd21e.svg)](https://huggingface.co/spaces/Genius-Society/HEp2)
 [![ms](https://img.shields.io/badge/modelscope-HEp2-624aff.svg)](https://www.modelscope.cn/studios/Genius-Society/HEp2)
 
 Classifying Cell Images Using Deep Learning Models
 
+## Purpose
+This project is to exercise how to use deep CNN models to classify cell images. Efficient Human Epithelial-2 (HEp-2) cell image classification can facilitate the diagnosis of many autoimmune diseases.
+
+## Data
+The HEp-2 cell images are from the international competition on cell image classification hosted by International Conference on Pattern Recognition in 2014. The images have been pre-partitioned into training set (8701 images), validation set (2175 images), and test set (2720 images). In addition, a .csv file is enclosed. It contains the category of each image. This file consists of two columns: the first column is the image IDs of all the 13,596 images, and the IDs are consistent with the names of the images in the three sets; and the second column is the category of the cell image.
+
+## Tasks
+Please finetune the pretrained AlexNet model for the cell image classification task. Specifically, you need to:
+
+1) use the architecture of AlexNet to construct the cell image classification model;
+2) use the weights in the pretrained AlexNet to initialize the weights of the model;
+3) change the number of neurons in the output layer (i.e., number of classes) in the model from 1000 (used by imageNet)  to 6 classes (used in the task);
+4) Train the model for a few epochs;
+5) Use the finetuned model to classify the test cell images.
+
+# Report
 ## Requirements
 ```bash
 conda create -n py311 python=3.11 -y
@@ -13,7 +29,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-### Maintenance
+### Code download
 ```bash
 git clone -b hep2 git@github.com:Genius-Society/medical_image_computing.git
 cd medical_image_computing
@@ -31,31 +47,9 @@ python plotter.py
 It will automatically find the latest log to plot.
 
 ## Results
-| ![Figure_2](https://github.com/MuGeminorum/AlexNet-HEp2-Classification/assets/20459298/5355ea0d-58c2-46d5-9aa6-88d07b237ba9) | ![Figure_1](https://github.com/MuGeminorum/AlexNet-HEp2-Classification/assets/20459298/f8f14be5-a6db-494c-b11a-36b1a3b36a26) |
-| :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-|                                                        **Loss curve**                                                        |                                             **Training and validation accuracy**                                             |
-
-# Chapter III - Classifying Cell Images Using Deep Learning Models
-Welcome to the HEp-2_cell_classification wiki!
-
-This project is to exercise how to use deep CNN models to classify cell images. Efficient Human Epithelial-2 (HEp-2) cell image classification can facilitate the diagnosis of many autoimmune diseases.
-
-这个项目是练习如何使用深度 CNN 模型对细胞图像进行分类。 高效的人类上皮细胞 2 (HEp-2) 细胞图像分类可以促进许多自身免疫性疾病的诊断。
-
-## Purpose
-This project is to exercise how to use deep CNN models to classify cell images. Efficient Human Epithelial-2 (HEp-2) cell image classification can facilitate the diagnosis of many autoimmune diseases.
-
-## Data
-The HEp-2 cell images are from the international competition on cell image classification hosted by International Conference on Pattern Recognition in 2014. The images have been pre-partitioned into training set (8701 images), validation set (2175 images), and test set (2720 images). In addition, a .csv file is enclosed. It contains the category of each image. This file consists of two columns: the first column is the image IDs of all the 13,596 images, and the IDs are consistent with the names of the images in the three sets; and the second column is the category of the cell image.
-
-## Tasks
-Please finetune the pretrained AlexNet model for the cell image classification task. Specifically, you need to:
-
-1) use the architecture of AlexNet to construct the cell image classification model;
-2) use the weights in the pretrained AlexNet to initialize the weights of the model;
-3) change the number of neurons in the output layer (i.e., number of classes) in the model from 1000 (used by imageNet)  to 6 classes (used in the task);
-4) Train the model for a few epochs;
-5) Use the finetuned model to classify the test cell images.
+| ![](https://www.modelscope.cn/models/Genius-Society/HEp2/resolve/master/loss.jpg) | ![](https://www.modelscope.cn/models/Genius-Society/HEp2/resolve/master/acc.jpg) |
+| :-------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
+|                                  **Loss curve**                                   |                       **Training and validation accuracy**                       |
 
 ## Aims & Background
 ### Aims

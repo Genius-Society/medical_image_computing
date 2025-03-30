@@ -1,6 +1,7 @@
-__pycache__/*
+*__pycache__*
 model/*
 test/*
 .vscode/*
 logs/*
 rename.sh
+test.*
