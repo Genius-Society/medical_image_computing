@@ -1,16 +1,25 @@
-# MSSC
+# Chapter IV - Medical Signal Segmentation and Classification (MSSC)
 [![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/mssc/LICENSE)
 
 Medical Signal Segmentation and Classification
 
-## Environment
+## Intro
+The project is dedicated to the segmentation and classification of medical imaging signals including boundary detection filters, Kmeans clustering algorithms, support vector machines (SVM) and other methods. The dataset uses MRI data of size 157 x 189 x 68.
+
+## Usage
+### Environment
 ```bash
 conda create -n py311 python=3.11 -y
 conda activate py311
 pip install -r requirements.txt
 ```
 
-## Usage
+### Code download
+```bash
+git clone -b mssc git@github.com:Genius-Society/medical_image_computing.git
+cd medical_image_computing
+```
+
 ### Classification
 ```bash
 python Classification.py
@@ -20,13 +29,6 @@ python Classification.py
 ```bash
 python Segmentation.py
 ```
-
-# Chapter IV - Medical Signal Segmentation and Classification
-Welcome to the Medical Signal Segmentation and Classification (MSSC) wiki!
-
-The project is dedicated to the segmentation and classification of medical imaging signals including boundary detection filters, Kmeans clustering algorithms, support vector machines (SVM) and other methods. The dataset uses MRI data of size 157 x 189 x 68.
-
-此项目致力于处理医图像学信号的分割与分类任务，包含边界检测滤波器、Kmeans聚类算法、支持向量机(SVM)等方法。其中数据集使用的是 157 x 189 x 68 尺寸的MRI数据。
 
 ## Edge Filters
 Edge provides critical information about the shape of the region of interest (ROI) and serves as an important step in many segmentation algorithms. In this task, we work on the data in the axial view at slice 16 for edge detection. 
