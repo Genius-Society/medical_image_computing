@@ -1,26 +1,7 @@
-# AD-Prediction
+# Chapter II - Classifying AD patients and normal controls from brain images
 [![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/ad/LICENSE)
 
 Classifying AD patients and normal controls from brain images
-
-## Requirements
-```bash
-conda create -n py311 python=3.11 -y
-conda activate py311
-pip install -r requirements.txt
-```
-
-## Usage
-```bash
-python svm.py
-```
-
-# Chapter II - Classifying AD patients and normal controls from brain images
-Welcome to the AD-prediction wiki!
-
-This project is for AD prediction. Predict whether each of the 10 subjects in the test is an AD patient or not. This includes extracting the feature representation from each subject's MR brain image and classifying these feature vectors using Support Vector Machines.
-
-该项目用于阿兹海默症预测。测试中的10名受试者是否都是阿兹海默症患者。 这包括从每个受试者的 MR 大脑图像中提取特征表示，并使用支持向量机对这些特征向量进行分类。
 
 ## Purpose
 This project is for AD prediction. Students are expected to be applying what they have learnt in Lab 1 about brain image processing and in Lab 2 about medical image classification to complete this project. 
@@ -40,6 +21,25 @@ For feature extraction, students have practiced how to measure the grey matter v
 </div><br>
 
 After feature extraction, each subject is represented by a 90-D feature vector. Please use Support Vector Machine for the classification. You may find the components in the feature vectors have large values and they change largely from feature to feature. You can conduct feature normalization before you apply SVM. For example, you can normalize each feature (across all training samples) to have a zero mean and a unit standard deviation. This may help your classification.
+
+# Report
+## Requirements
+```bash
+conda create -n py311 python=3.11 -y
+conda activate py311
+pip install -r requirements.txt
+```
+
+## Code download
+```bash
+git clone -b ad git@github.com:Genius-Society/medical_image_computing.git
+cd medical_image_computing
+```
+
+## Usage
+```bash
+python svm.py
+```
 
 ## Aims & Background
 ### Aims
