@@ -1,4 +1,2 @@
 scikit-learn
-autopep8
-datasets
-modelscope
+modelscope[framework]==1.21.0
