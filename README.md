@@ -1,5 +1,5 @@
 # Chapter I - Medical image computing (MIC)
-[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](./LICENSE)
 
 Medical Image Computing Module Development
 
