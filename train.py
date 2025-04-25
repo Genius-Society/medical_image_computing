@@ -1,7 +1,6 @@
 import csv
 import argparse
 import torch.nn as nn
-import torch.utils.data
 import torch.optim as optim
 import torchvision.models as models
 from torch.utils.data import DataLoader
