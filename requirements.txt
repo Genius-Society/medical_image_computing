@@ -1,7 +1,5 @@
-scikit-learn
-opencv-python
-scikit-image
 matplotlib
-autopep8
-datasets
-modelscope
+scikit-learn
+scikit-image
+opencv-python
+modelscope[framework]==1.21.0
