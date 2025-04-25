@@ -1,5 +1,5 @@
 # Chapter IV - Medical Signal Segmentation and Classification (MSSC)
-[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/mssc/LICENSE)
+[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](./LICENSE)
 
 Medical Signal Segmentation and Classification
 
