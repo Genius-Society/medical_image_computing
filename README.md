@@ -1,5 +1,5 @@
 # Chapter II - Classifying AD patients and normal controls from brain images
-[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](https://github.com/Genius-Society/medical_image_computing/blob/ad/LICENSE)
+[![license](https://img.shields.io/github/license/Genius-Society/medical_image_computing.svg)](./LICENSE)
 [![hf](https://img.shields.io/badge/huggingface-aal__stats__vol-ffd21e.svg)](https://huggingface.co/spaces/Genius-Society/aal_stats_vol)
 [![ms](https://img.shields.io/badge/modelscope-aal__stats__vol-624aff.svg)](https://www.modelscope.cn/studios/Genius-Society/aal_stats_vol)
 
