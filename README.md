@@ -34,10 +34,10 @@ Region-growing algorithms can perform medical image segmentation tasks via delin
 4.	After modifying your code, save it and then click on the _Reload_ button to reload the module, so you don’t need to restart Slicer;
 5.	Click _Apply_ to see the results. Tune the global and local parameters to find the best segmentation result.
 
-# Report
+## Report
 Based on experiment results, the best global and local parameters are among experiments with ID from 2 to 3 considering whether the classification is true or false, positive or negative. The best way to find them is to define an indicator of the best result, then define a distance between the result indicator in current parameters and the best outcome, and finally search for the settings of minimum distance by deep learning. In that way, we do not need to search for the best parameters manually.
 
-## MIE
+### MIE
 The source code of MIE is in _MedicalImageEnhancement.py_.
 
 _Table 1_ compares the three filters, including smoothing, sharpening, edge detection in the aspects of the kernel, experiment demo, and time cost of running. The way of achieving a filter is to use the filter to perform convolution operations on 3D images.
@@ -47,7 +47,7 @@ _Table 1_ compares the three filters, including smoothing, sharpening, edge dete
     <img width="455" src="https://user-images.githubusercontent.com/20459298/233113143-f6f0b426-17f5-4b38-8d13-d7ae4af03a9a.PNG"/>
 </div>
 
-## MIS
+### MIS
 The source code of MIS is in _MedicalImageSegmentation.py_.
 
 _Figure 1_ shows the demonstration of 3D segmentation results achieved using three multiple viewing angles.
