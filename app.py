@@ -102,4 +102,8 @@ if __name__ == "__main__":
         examples=example_imgs,
         flagging_mode="never",
         cache_examples=False,
-    ).launch(css="#gradio-share-link-button-0 { display: none; }", ssr_mode=False)
+    ).launch(
+        theme=gr.themes.Ocean(),
+        css="#gradio-share-link-button-0 { display: none; }",
+        ssr_mode=False,
+    )
