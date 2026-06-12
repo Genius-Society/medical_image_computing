@@ -41,6 +41,12 @@ TRANSLATE = {
 
 CLASSES = list(TRANSLATE.keys())
 
+I18N = gr.I18n(
+    zh={key: key for key in ZH2EN}
+    | {TRANSLATE[key]: TRANSLATE[key] for key in TRANSLATE},
+    en=ZH2EN | {TRANSLATE[key]: key for key in TRANSLATE},
+)
+
 
 def embeding(img_path: str):
     compose = transforms.Compose(
@@ -73,7 +79,7 @@ def infer(target: str):
         output: torch.Tensor = model(input.unsqueeze(0))
         predict = torch.max(output.data, 1)[1]
         filename = os.path.basename(target)
-        result = CLASSES[predict] if EN_US else TRANSLATE[CLASSES[predict]]
+        result = I18N(TRANSLATE[CLASSES[predict]])
 
     except Exception as e:
         status = f"{e}"
@@ -86,19 +92,15 @@ if __name__ == "__main__":
     for cls in CLASSES:
         example_imgs.append(f"{MODEL_DIR}/examples/{cls}.png")
 
-    i18n = gr.I18n(
-        zh={key: key for key in ZH2EN},
-        en=ZH2EN,
-    )
     gr.Interface(
         fn=infer,
-        inputs=gr.Image(type="filepath", label=i18n("上传细胞图像")),
+        inputs=gr.Image(type="filepath", label=I18N("上传细胞图像")),
         outputs=[
-            gr.Textbox(label=i18n("状态栏"), buttons=["copy"]),
-            gr.Textbox(label=i18n("图片名"), buttons=["copy"]),
-            gr.Textbox(label=i18n("识别结果"), buttons=["copy"]),
+            gr.Textbox(label=I18N("状态栏"), buttons=["copy"]),
+            gr.Textbox(label=I18N("图片名"), buttons=["copy"]),
+            gr.Textbox(label=I18N("识别结果"), buttons=["copy"]),
         ],
-        title=i18n("请上传 PNG 格式的 HEp2 细胞图片"),
+        title=I18N("请上传 PNG 格式的 HEp2 细胞图片"),
         examples=example_imgs,
         flagging_mode="never",
         cache_examples=False,
@@ -106,5 +108,5 @@ if __name__ == "__main__":
         theme=gr.themes.Ocean(),
         css="#gradio-share-link-button-0 { display: none; }",
         ssr_mode=False,
-        i18n=i18n,
+        i18n=I18N,
     )
