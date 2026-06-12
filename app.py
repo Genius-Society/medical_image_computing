@@ -30,11 +30,6 @@ ZH2EN = {
     "请上传 PNG 格式的 HEp2 细胞图片": "It is recommended to upload HEp2 cell images in PNG format.",
 }
 
-
-def _L(zh_txt: str):
-    return ZH2EN[zh_txt] if EN_US else zh_txt
-
-
 TRANSLATE = {
     "Centromere": "着丝粒",
     "Golgi": "高尔基体",
@@ -43,6 +38,7 @@ TRANSLATE = {
     "Nucleolar": "核仁",
     "Speckled": "斑核",
 }
+
 CLASSES = list(TRANSLATE.keys())
 
 
@@ -90,15 +86,19 @@ if __name__ == "__main__":
     for cls in CLASSES:
         example_imgs.append(f"{MODEL_DIR}/examples/{cls}.png")
 
+    i18n = gr.I18n(
+        zh={key: key for key in ZH2EN},
+        en=ZH2EN,
+    )
     gr.Interface(
         fn=infer,
-        inputs=gr.Image(type="filepath", label=_L("上传细胞图像")),
+        inputs=gr.Image(type="filepath", label=i18n("上传细胞图像")),
         outputs=[
-            gr.Textbox(label=_L("状态栏"), buttons=["copy"]),
-            gr.Textbox(label=_L("图片名"), buttons=["copy"]),
-            gr.Textbox(label=_L("识别结果"), buttons=["copy"]),
+            gr.Textbox(label=i18n("状态栏"), buttons=["copy"]),
+            gr.Textbox(label=i18n("图片名"), buttons=["copy"]),
+            gr.Textbox(label=i18n("识别结果"), buttons=["copy"]),
         ],
-        title=_L("请上传 PNG 格式的 HEp2 细胞图片"),
+        title=i18n("请上传 PNG 格式的 HEp2 细胞图片"),
         examples=example_imgs,
         flagging_mode="never",
         cache_examples=False,
@@ -106,4 +106,5 @@ if __name__ == "__main__":
         theme=gr.themes.Ocean(),
         css="#gradio-share-link-button-0 { display: none; }",
         ssr_mode=False,
+        i18n=i18n,
     )
